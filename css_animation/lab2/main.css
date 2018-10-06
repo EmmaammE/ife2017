@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 65px;
+    background: #fbfbfb;
+    border:solid 1px #ebebeb;
+    margin: 20px;
+}
+
+.box1 {
+    transform: skewX(30deg);
+    -ms-transform: skewX(30deg);
+    -webkit-transform: skewX(30deg);
+    -o-transform: skewX(30deg);
+    -moz-transform: skewX(30deg)
+}
+
+.box2 {
+    transform: scaleX(0.5);
+}
+
+.box3 {
+    transform: rotate(45deg);
+}
+
+.box4 {
+    transform: translate(10px,20px);
+}
+
+.box5 {
+    transform: skewX(30deg) scaleX(0.5) rotate(45deg) translate(10px, 20px);
+}
