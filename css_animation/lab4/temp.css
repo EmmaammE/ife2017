@@ -1,0 +1,50 @@
+/***https://codepen.io/andymcfee/pen/eyahr
+* CSS3 FLIP CARDS
+* Markup for an element that a user can hover to reveal content on the back, like a card
+* Browser Support: Safari, Firefox, Chrome, IE8+, and Touch Devices; (IE9 and below will not have any flip effect but will just change on hover)
+***/
+
+.flip-card .card-front,
+.flip-card .card-back {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: -moz-transform 500ms;
+  -o-transition: -o-transform 500ms;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  display: block;
+  position: absolute;
+
+}
+.flip-card .card-front {
+  -moz-transform: perspective(300px) rotateY(0);
+  -webkit-transform: perspective(300px) rotateY(0);
+  transform: perspective(300px) rotateY(0);
+  z-index: 900;
+}
+.flip-card .card-back {
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  z-index: 800;
+}
+.flip-card:hover .card-front {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform: perspective(300px) rotateY(180deg);
+  -webkit-transform: perspective(300px) rotateY(180deg);
+  transform: perspective(300px) rotateY(180deg);
+}
+.flip-card:hover .card-back {
+  z-index: 950;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -moz-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  transform: perspective(300px) rotateY(0deg);
+}

@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_front{
+    margin: 0;
+    padding: 0;
+    height: 350px;
+    position: relative;
+    perspective: 300px;
+    z-index: 2;
+    transition: all .5s ease-in-out;
+
+    /* transform: rotateY(180deg) */
+}
+
+.card_back {
+    position: absolute;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+    perspective: 300px;
+    /* opacity: 0; */
+}
+
+.container:hover .card_front{
+    transform: perspective(300px) rotateY(180deg);
+    -webkit-transform: perspective(300px) rotateY(180deg);
+    /* opacity: 0; */
+}
+
+.container:hover .card_back {
+    transform: perspective(300px) rotateY(180deg);
+    -webkit-transform: perspective(300px) rotateY(180deg);
+    /* opacity: 1; */
+    z-index: 3;
+}
